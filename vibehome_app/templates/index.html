@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block content %}
+  <div class="sidebar fixed top-1/2 right-0 bg-red-700 text-white block transform origin-bottom-right -rotate-90 ">
+  <a href="https://www.instagram.com/_vibehome/?next=%2F" target="_blank">  <span class="text-center italic">ODWIEDŹ NASZEGO<br><span class="pl-6">INSTAGRAMA</span></span></a>
+    </div>
+    <!--main photos-->
+    
+    <div id="container">
+      <div class="photo-container">
+          <img class="photo active" src="{% static 'images/vibehome1.jpeg'%}" alt="Pierwsze zdjęcie">
+          <img class="photo" src="{% static 'images/vibehome2.jpeg'%}" alt="Drugie zdjęcie">
+          <img class="photo" src="{% static 'images/vibehome3.jpeg'%}" alt="Trzecie zdjęcie">
+          <!-- Dodaj kolejne zdjęcia, jeśli chcesz -->
+      </div>
+    </div>
+
+    <script src="{% static 'js/mainphotochange.js' %}"></script>
+
+    <!--search-->
+   
+    <div class="container mx-auto px-4">
+      <div class="text-blue-950 text-2xl font-bold p-8">WYSZUKAJ NIERUCHOMOŚĆ</div>
+      <div class="flex flex-wrap -mx-2 p-8 shadow-md shadow-gray-800 rounded px-8 pt-6 pb-8 mb-4 rounded p-4">
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+          <label class="text-blue-950 block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="location">
+            Lokalizacja
+          </label>
+          <input class="text-blue-950 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="location" type="text" placeholder="Kraków">
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="property-type">
+            Rodzaj
+          </label>
+          <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="property-type">
+            <option>MIESZKANIE</option>
+            <option>DOM</option>
+            <option>OD DEWELOPERA</option>
+            <option>NA WYNAJEM</option>
+          </select>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4 additional-options hidden">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="offer-number">
+            Nr oferty
+          </label>
+          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="offer-number" type="text" placeholder="12345">
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4 additional-options hidden">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="room-number">
+            Liczba pokoi
+          </label>
+          <div class="flex space-x-1">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="room-number-from" type="number" placeholder="Od">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="room-number-to" type="number" placeholder="Do">
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4 additional-options hidden">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="price">
+            Cena
+          </label>
+          <div class="flex space-x-1">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="price-from" type="number" placeholder="Od">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="price-to" type="number" placeholder="Do">
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4 additional-options hidden">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="area">
+            Powierzchnia
+          </label>
+          <div class="flex space-x-1">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="area-from" type="number" placeholder="Od">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="area-to" type="number" placeholder="Do">
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4 additional-options hidden">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="floor">
+            Piętro
+          </label>
+          <div class="flex space-x-1">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-l py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="floor-from" type="number" placeholder="Od">
+            <input class="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded-r py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="floor-to" type="number" placeholder="Do">
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="flex items-center justify-center ml-4 pl-4 right-button">
+            <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4  rounded focus:outline-none focus:shadow-outline show-more-button" type="button" onclick="toggleAdditionalOptions()">
+              WIĘCEJ OPCJI
+            </button>
+          </div>
+          <div class="flex items-center justify-center me-8 pl-8 center-button">
+            <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 pl-4 rounded focus:outline-none focus:shadow-outline" type="button">
+              WYSZUKAJ
+            </button>
+          </div>
+        </div>
+        <script src="{% static 'js/search.js' %}"></script>
+      </div>
+    </div>
+    <!--photo-->
+    <div class="flex justify-between">
+      <img src="{% static 'images/Domy.jpg'%}" class="w-1/4 p-6">
+      <img src="{% static 'images/Mieszkania.png'%}" class="w-1/4 p-6">
+      <img src="{% static 'images/Od dewelopera.png'%}" class="w-1/4 p-6">
+      <img src="{% static 'images/Na wynajem.jpg'%}" class="w-1/4 p-6">
+    </div>
+    
+    <!--contact-->
+    <div class="border rounded p-4">
+      <div class="flex items-center">
+        <div class="text-blue-950 text-2xl font-bold mr-4">SKONTAKTUJ SIĘ Z NAMI</div>
+        <div class="mobile-form-toggle flex items-center justify-center cursor-pointer bg-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 transform transition-transform duration-300 ease-in-out text-blue-950">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+      </div>
+    
+      
+      <form class="bg-white shadow-md shadow-gray-800 rounded px-8 pt-6 pb-8 hidden" id="contact-form" method="POST" action="{% url 'kontakt' %}">
+        {% csrf_token %}
+        <div class="flex">
+          <div class="w-full lg:w-1/2 pr-4">
+            <label class="text-blue-950 block mb-2 font-medium" for="name">Imię i nazwisko:</label>
+            <input class="w-full px-4 py-2 mb-4 border rounded-md" type="text" id="name" name="name" required>
+    
+            <label class="text-blue-950 block mb-2 font-medium" for="phone">Nr telefonu:</label>
+            <input class="w-full px-4 py-2 mb-4 border rounded-md" type="tel" id="phone" name="phone" required>
+    
+            <label class="text-blue-950 block mb-2 font-medium" for="email">Adres e-mail:</label>
+            <input class="w-full px-4 py-2 mb-4 border rounded-md" type="email" id="email" name="email" required>
+    
+            <label class="text-blue-950 block mb-4 font-medium" for="property_type">Temat:</label>
+            <select class="w-full px-4 py-2 mb-4 border rounded-md" id="property_type" name="property_type">
+              <option value="CHCĘ SPRZEDAĆ NIERUCHOMOŚĆ" class="text-blue-950">CHCĘ SPRZEDAĆ NIERUCHOMOŚĆ</option>
+              <option value="CHCĘ KUPIĆ NIERUCHOMOŚĆ" class="text-blue-950">CHCĘ KUPIĆ NIERUCHOMOŚĆ</option>
+              <option value="CHCĘ WYNAJĄĆ NIERUCHOMOŚĆ" class="text-blue-950">CHCĘ WYNAJĄĆ NIERUCHOMOŚĆ</option>
+            </select>
+          </div>
+    
+          <div class="w-full lg:w-1/2 pl-4">
+            <label class="text-blue-950 block mb-2 font-medium " for="comments">Uwagi:</label>
+            <textarea class="w-full h-80 resize-none px-4 py-2 mb-4 border rounded-md" id="comments" name="comments"></textarea>
+          </div>
+        </div>
+    
+        <div class="mb-4">
+          <label class="text-blue-950 block text-gray-700 font-bold">
+            <input class="mr-2 leading-tight" type="checkbox" required>
+            Korzystając z formularza, zgadzasz się na przechowywanie i przetwarzanie Twoich danych osobowych, które wykorzystamy wyłącznie w celu kontaktu zwrotnego. Informacje o tym, jak dbamy o Twoje dane, znajdziesz w naszej Polityce prywatności.
+          </label>
+        </div>
+    
+        <div class="flex items-center justify-center">
+          <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Wyślij
+          </button>
+        </div>
+      </form>
+      <p id="success-message" style="display: none;"></p>
+    </div>
+    <script src="{% static 'js/expandcontact.js' %}"></script>
+    <script src="{% static 'js/checkcontact.js' %}"></script>
+
+    
+    
+    
+<br>
+
+
+
+<span class="text-2xl text-blue-950 font-bold p-8">DLACZEGO <span class="underline text-blue-950">VIBEHOME</span></span>
+<div class="flex justify-between">
+  <p class="text-left text-blue-950 p-8 text-lg">VibeHome to firma specjalizująca się w nieruchomościach, która oferuje swoim klientom kompleksową obsługę. Współpracujemy z notariuszami i oferujemy profesjonalne wsparcie w procesie zakupu i sprzedaży nieruchomości. Nasze mieszkania są starannie wyselekcjonowane i spełniają najwyższe standardy. Zespół doświadczonych specjalistów zapewnia profesjonalną wycenę, przygotowanie oferty oraz pomoc w znalezieniu odpowiedniego kupca lub wymarzonego miejsca do życia. Dzięki naszemu doświadczeniu i wiedzy rynkowej, pomagamy w znalezieniu najlepszej oferty dla sprzedającego lub kupującego, co pozwala na zaoszczędzenie czasu i pieniędzy. Jesteśmy pasjonatami pomagającymi ludziom w znalezieniu wymarzonego miejsca do życia lub w sprzedaży ich nieruchomości. Skontaktuj się z nami, a pomożemy Ci w realizacji Twoich marzeń.</p>
+
+  <img class="max-w-xs p-8 mobile-hidden" src="{% static 'images/ONAS.jpg' %}" alt="image description">
+</div>
+
+{% endblock content %}

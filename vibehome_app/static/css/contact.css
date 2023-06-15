@@ -1,0 +1,40 @@
+.mobile-form-toggle.active .transform {
+    transform: rotate(180deg);
+  }
+  
+  @media (min-width: 768px) {
+    .mobile-form-toggle {
+      display: none;
+    }
+  
+    #contact-form {
+      display: block !important;
+    }
+  
+    #contact-form .lg\:w-1\/2 {
+      width: 50%;
+    }
+  
+    #contact-form .lg\:pl-4 {
+      padding-left: 1rem;
+    }
+  
+    #contact-form .lg\:pr-4 {
+      padding-right: 1rem;
+    }
+  
+    #contact-form .lg\:text-right {
+      text-align: right;
+    }
+  }
+  
+  textarea {
+    margin-bottom: 10px;
+}
+
+#success-message {
+    background-color: midnightblue;
+    color: white;
+    padding: 10px;
+    display: none;
+}
